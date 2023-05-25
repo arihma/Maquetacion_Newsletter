@@ -1,0 +1,92 @@
+// VARIABLES
+
+////Colores
+$color__negro: #241c15
+$color__blanco: #fefefe
+$color__fondo: #fbeeca
+$color__primario: #007c89
+$color__secundario: #c5dbf2
+
+////Tamayos
+$gap__s: .5rem
+$gap__m: 1rem
+$gap__l: 1.5rem
+$gap__xl: 2rem
+$container__m: 800px
+
+////Tipografías
+
+.fuente__titulo
+  font-family: 'Kalam', cursive //consultar si va aquí o no.
+
+//GENERALES
+body
+  background-color: $color__fondo
+  font-family: 'Roboto', sans-serif
+  color: $color__negro
+
+//COMPONENTES
+.container
+  padding:
+    left: $gap__m
+    right: $gap__m
+  margin: 0 auto
+  max-width: $container__m
+
+.image
+  width: 100%
+
+.link
+  color: $color__primario
+
+.boton
+  display: inline-block
+  padding: $gap__m
+  background-color: $color__primario
+  color: $color__blanco
+  text-decoration: none
+  font-weight: bold
+  border: 2px solid $color__primario
+  border-radius: 8px
+  &:hover
+    background-color: transparent
+    color: $color__primario
+    border-color: transparent
+  &__transparente
+    background-color: transparent
+    color: $color__primario
+    border-color: transparent
+    &:hover
+      border-color: $color__primario
+
+.alerta
+  background-color: $color__secundario
+  padding:
+    top: $gap__s
+    bottom: $gap__s
+
+//PÁGINA INICIO
+
+.hero
+  //container que está dentro de hero
+  .container
+    display: flex
+    gap: $gap__xl
+    align-items: center //centra las cosas en vertical entre los contenidos de las columnas
+    $padding__size: 5rem //cambiar esto si queda muy grande el contenido o peuqeño
+    padding:
+      top: $padding__size
+      bottom: $padding__size
+    @media all and (max-width: 600px)
+      flex-direction: column //column-reverse si queremos priorizar la columa de derecha a izquierda
+  &__textos, &__imagen
+    flex: 1
+  &__titulo
+    font-size: $gap__xl
+  &__descripcion
+    font-size: $gap__l
+  &__lista
+    display: flex
+    padding: 0
+    list-style: none
+    gap: $gap__m
